@@ -1,5 +1,4 @@
 return {
-<<<<<<< HEAD
 	{
 		"nvim-telescope/telescope-ui-select.nvim",
 	},
@@ -24,7 +23,6 @@ return {
 			require("telescope").load_extension("ui-select")
 		end,
 	},
-=======
   {
     "nvim-telescope/telescope-ui-select.nvim",
   },
@@ -49,5 +47,4 @@ return {
       require("telescope").load_extension("ui-select")
     end,
   },
->>>>>>> 6496349b022e1ec817c1630783f6b8db9e930e8c
 }
