@@ -10,6 +10,11 @@ return {
 			"rafamadriz/friendly-snippets",
 		},
 	},
+  {
+    "windwp/nvim-autopairs",
+    event = "InsertEnter",
+    config = true
+  },
 	{
 		"hrsh7th/nvim-cmp",
 		config = function()

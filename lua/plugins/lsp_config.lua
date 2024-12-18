@@ -51,6 +51,15 @@ return {
 			lspconfig.hyprls.setup({
 				capabilities = capabilities,
 			})
+			lspconfig.mesonlsp.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.sqls.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.pylsp.setup({
+				capabilities = capabilities,
+			})
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
