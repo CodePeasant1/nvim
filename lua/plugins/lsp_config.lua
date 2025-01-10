@@ -42,6 +42,12 @@ return {
 			lspconfig.jsonls.setup({
 				capabilities = capabilities,
 			})
+			lspconfig.ts_ls.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.eslint.setup({
+				capabilities = capabilities,
+			})
 			lspconfig.jdtls.setup({
 				capabilities = capabilities,
 			})
@@ -54,12 +60,13 @@ return {
 			lspconfig.mesonlsp.setup({
 				capabilities = capabilities,
 			})
-			lspconfig.sqls.setup({
+			lspconfig.sqlls.setup({
 				capabilities = capabilities,
 			})
 			lspconfig.pylsp.setup({
 				capabilities = capabilities,
 			})
+
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
