@@ -66,6 +66,15 @@ return {
 			lspconfig.pylsp.setup({
 				capabilities = capabilities,
 			})
+      lspconfig.cobol_ls.setup({
+        capabilities = capabilities,
+      })
+      lspconfig.asm_lsp.setup({
+        capabilities = capabilities;
+      })
+      lspconfig.java_language_server.setup({
+        capabilities = capabilities;
+      })
 
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
