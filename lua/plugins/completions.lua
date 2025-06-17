@@ -10,15 +10,19 @@ return {
 			"rafamadriz/friendly-snippets",
 		},
 	},
-  {
-    "windwp/nvim-autopairs",
-    event = "InsertEnter",
-    config = true
-  },
+	{
+		"windwp/nvim-autopairs",
+		event = "InsertEnter",
+		config = true,
+	},
+	{
+		"chrisbra/unicode.vim",
+	},
 	{
 		"hrsh7th/nvim-cmp",
 		config = function()
 			local cmp = require("cmp")
+
 			require("luasnip.loaders.from_vscode").lazy_load()
 
 			cmp.setup({
