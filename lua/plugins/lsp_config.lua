@@ -77,9 +77,6 @@ return {
       lspconfig.java_language_server.setup({
         capabilities = capabilities,
       })
-      lspconfig.stimulus_ls.setup({
-        capabilities = capabilities,
-      })
       lspconfig.dockerls.setup({
         capabilities = capabilities,
       })
@@ -101,6 +98,7 @@ return {
       lspconfig.hls.setup({
         capabilities = capabilities,
       })
+
       vim.diagnostic.config({ virtual_text = true })
 
       vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
