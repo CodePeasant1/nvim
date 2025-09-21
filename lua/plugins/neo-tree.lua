@@ -5,6 +5,13 @@ return {
 		"nvim-lua/plenary.nvim",
 		"nvim-tree/nvim-web-devicons",
 		"MunifTanjim/nui.nvim",
+		{
+			"3rd/image.nvim",
+			build = false,
+			opts = {
+				processor = "magick_cli",
+			},
+		},
 	},
 	config = function()
 		vim.keymap.set("n", "<C-n>", ":Neotree filesystem reveal left<CR>", {})
