@@ -1,110 +1,52 @@
 return {
-  {
-    "williamboman/mason.nvim",
-    lazy = false,
-    config = function()
-      require("mason").setup()
-    end,
-  },
-  {
-    "williamboman/mason-lspconfig.nvim",
-    lazy = false,
-    opts = {
-      auto_install = true,
-    },
-  },
-  {
-    "neovim/nvim-lspconfig",
-    lazy = false,
-    config = function()
-      local capabilities = require("cmp_nvim_lsp").default_capabilities()
+	{
+		"williamboman/mason.nvim",
+		lazy = false,
+		config = function()
+			require("mason").setup()
+		end,
+	},
+	{
+		"williamboman/mason-lspconfig.nvim",
+		lazy = false,
+		opts = {
+			auto_install = true,
+		},
+	},
+	{
+		"neovim/nvim-lspconfig",
+		lazy = false,
+		config = function()
+			vim.lsp.enable("clangd")
+			vim.lsp.enable("rust_analyzer")
+			vim.lsp.enable("cssls")
+			vim.lsp.enable("html")
+			vim.lsp.enable("lua_ls")
+			vim.lsp.enable("cmake")
+			vim.lsp.enable("jsonls")
+			vim.lsp.enable("ts_ls")
+			vim.lsp.enable("eslint")
+			vim.lsp.enable("jdtls")
+			vim.lsp.enable("bashls")
+			vim.lsp.enable("hyprls")
+			vim.lsp.enable("mesonlsp")
+			vim.lsp.enable("sqlls")
+			vim.lsp.enable("pylsp")
+			vim.lsp.enable("asm_lsp")
+			vim.lsp.enable("java_language_server")
+			vim.lsp.enable("dockerls")
+			vim.lsp.enable("glslls")
+			vim.lsp.enable("fortls")
+			vim.lsp.enable("golangci_lint_ls")
+			vim.lsp.enable("zls")
+			vim.lsp.enable("hls")
 
-      local lspconfig = require("lspconfig")
+			vim.diagnostic.config({ virtual_text = true })
 
-      lspconfig.clangd.setup({
-        capabilities = {
-          offsetEncoding = { "utf-16" },
-        },
-      })
-      lspconfig.rust_analyzer.setup({
-        capabilities = capabilities,
-      })
-      lspconfig.cssls.setup({
-        capabilities = capabilities,
-      })
-      lspconfig.html.setup({
-        capabilities = capabilities,
-      })
-      lspconfig.lua_ls.setup({
-        capabilities = capabilities,
-      })
-      lspconfig.cmake.setup({
-        capabilities = capabilities,
-      })
-      lspconfig.jsonls.setup({
-        capabilities = capabilities,
-      })
-      lspconfig.ts_ls.setup({
-        capabilities = capabilities,
-      })
-      lspconfig.eslint.setup({
-        capabilities = capabilities,
-      })
-      lspconfig.jdtls.setup({
-        capabilities = capabilities,
-      })
-      lspconfig.bashls.setup({
-        capabilities = capabilities,
-      })
-      lspconfig.hyprls.setup({
-        capabilities = capabilities,
-      })
-      lspconfig.mesonlsp.setup({
-        capabilities = capabilities,
-      })
-      lspconfig.sqlls.setup({
-        capabilities = capabilities,
-      })
-      lspconfig.pylsp.setup({
-        capabilities = capabilities,
-      })
-      lspconfig.cobol_ls.setup({
-        capabilities = capabilities,
-      })
-      lspconfig.asm_lsp.setup({
-        capabilities = capabilities,
-      })
-      lspconfig.java_language_server.setup({
-        capabilities = capabilities,
-      })
-      lspconfig.dockerls.setup({
-        capabilities = capabilities,
-      })
-      lspconfig.cmake.setup({
-        capabilities = capabilities,
-      })
-      lspconfig.glslls.setup({
-        capabilities = capabilities,
-      })
-      lspconfig.fortls.setup({
-        capabilities = capabilities,
-      })
-      lspconfig.golangci_lint_ls.setup({
-        capabilities = capabilities,
-      })
-      lspconfig.zls.setup({
-        capabilities = capabilities,
-      })
-      lspconfig.hls.setup({
-        capabilities = capabilities,
-      })
-
-      vim.diagnostic.config({ virtual_text = true })
-
-      vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
-      vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
-      vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
-      vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
-    end,
-  },
+			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
+			vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
+			vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
+			vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
+		end,
+	},
 }
